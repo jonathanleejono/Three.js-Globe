@@ -1,6 +1,8 @@
 import * as THREE from "https://unpkg.com/three@0.139.2/build/three.module.js";
 import vertexShader from "./shaders/vertex.glsl";
 import fragmentShader from "./shaders/fragment.glsl";
+import atmosphereVertexShader from "./shaders/atmosphereVertex.glsl";
+import atmosphereFragmentShader from "./shaders/atmosphereFragment.glsl";
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -37,11 +39,26 @@ const sphere = new THREE.Mesh(
 
 scene.add(sphere);
 
+//creating atmosphere
+const atmosphere = new THREE.Mesh(
+  new THREE.SphereGeometry(5, 50, 50),
+  new THREE.ShaderMaterial({
+    vertexShader: atmosphereVertexShader,
+    fragmentShader: atmosphereFragmentShader,
+    blending: THREE.AdditiveBlending,
+    side: THREE.BackSide,
+  })
+);
+
+atmosphere.scale.set(1.1, 1.1, 1.1);
+
+scene.add(atmosphere);
 camera.position.z = 15;
 
 function animate() {
   requestAnimationFrame(animate);
   renderer.render(scene, camera);
+  sphere.rotation.y += 0.001;
 }
 
 animate();
