@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "gsap": "^3.10.2",
     "vite": "^2.9.0",
     "vite-plugin-string": "^1.1.2"
   }
