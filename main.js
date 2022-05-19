@@ -32,7 +32,7 @@ const sphere = new THREE.Mesh(
     fragmentShader,
     uniforms: {
       globeTexture: {
-        value: new THREE.TextureLoader().load("./img/globe.jpeg"),
+        value: new THREE.TextureLoader().load("./img/globe2.jpeg"),
       },
     },
   })
@@ -103,9 +103,43 @@ function animate() {
 
 animate();
 
-addEventListener("mousemove", () => {
+addEventListener("mousemove", (event) => {
+  console.log("event: ", event);
   mouse.x = (event.clientX / innerWidth) * 2 - 1;
   mouse.y = -(event.clientY / innerHeight) * 2 + 1;
 });
 
-console.log(mouse);
+console.log("mouse: ", mouse);
+
+// addEventListener("mousedown", (event) => {
+//   mouse.x = (event.clientX / innerWidth) * 2 - 1;
+//   mouse.y = -(event.clientY / innerHeight) * 2 + 1;
+// });
+
+// addEventListener("mouseup", (event) => {
+//   mouse.x = (event.clientX / innerWidth) * 2 - 1;
+//   mouse.y = -(event.clientY / innerHeight) * 2 + 1;
+// });
+
+// addEventListener("touchstart", (event) => {
+//   mouse.x = (event.clientX / innerWidth) * 2 - 1;
+//   mouse.y = -(event.clientY / innerHeight) * 2 + 1;
+// });
+
+// addEventListener("touchmove", (event) => {
+//   mouse.x = (event.clientX / innerWidth) * 2 - 1;
+//   mouse.y = -(event.clientY / innerHeight) * 2 + 1;
+// });
+
+// addEventListener("touchend", (event) => {
+//   mouse.x = (event.clientX / innerWidth) * 2 - 1;
+//   mouse.y = -(event.clientY / innerHeight) * 2 + 1;
+// });
+
+// $.canvas.addEventListener("touchstart", dragStart, false);
+// $.canvas.addEventListener("mousedown", dragStart, false);
+// $.canvas.addEventListener("touchend", dragEnd, false);
+// $.canvas.addEventListener("mouseup", dragEnd, false);
+// $.canvas.addEventListener("touchmove", dragMove, false);
+// $.canvas.addEventListener("mousemove", dragMove, false);
+// $.canvas.addEventListener("mouseleave", dragEnd, false);
