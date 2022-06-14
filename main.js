@@ -1,9 +1,11 @@
 import gsap from "gsap";
-import * as THREE from "https://unpkg.com/three@0.139.2/build/three.module.js";
+import * as THREE from "three";
 import vertexShader from "./shaders/vertex.glsl";
 import fragmentShader from "./shaders/fragment.glsl";
 import atmosphereVertexShader from "./shaders/atmosphereVertex.glsl";
 import atmosphereFragmentShader from "./shaders/atmosphereFragment.glsl";
+
+const canvasContainer = document.querySelector("#canvasContainer");
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -14,6 +16,7 @@ const camera = new THREE.PerspectiveCamera(
 );
 const renderer = new THREE.WebGLRenderer({
   antialias: true,
+  canvas: document.querySelector("canvas"),
 });
 
 console.log(scene);
@@ -110,36 +113,3 @@ addEventListener("mousemove", (event) => {
 });
 
 console.log("mouse: ", mouse);
-
-// addEventListener("mousedown", (event) => {
-//   mouse.x = (event.clientX / innerWidth) * 2 - 1;
-//   mouse.y = -(event.clientY / innerHeight) * 2 + 1;
-// });
-
-// addEventListener("mouseup", (event) => {
-//   mouse.x = (event.clientX / innerWidth) * 2 - 1;
-//   mouse.y = -(event.clientY / innerHeight) * 2 + 1;
-// });
-
-// addEventListener("touchstart", (event) => {
-//   mouse.x = (event.clientX / innerWidth) * 2 - 1;
-//   mouse.y = -(event.clientY / innerHeight) * 2 + 1;
-// });
-
-// addEventListener("touchmove", (event) => {
-//   mouse.x = (event.clientX / innerWidth) * 2 - 1;
-//   mouse.y = -(event.clientY / innerHeight) * 2 + 1;
-// });
-
-// addEventListener("touchend", (event) => {
-//   mouse.x = (event.clientX / innerWidth) * 2 - 1;
-//   mouse.y = -(event.clientY / innerHeight) * 2 + 1;
-// });
-
-// $.canvas.addEventListener("touchstart", dragStart, false);
-// $.canvas.addEventListener("mousedown", dragStart, false);
-// $.canvas.addEventListener("touchend", dragEnd, false);
-// $.canvas.addEventListener("mouseup", dragEnd, false);
-// $.canvas.addEventListener("touchmove", dragMove, false);
-// $.canvas.addEventListener("mousemove", dragMove, false);
-// $.canvas.addEventListener("mouseleave", dragEnd, false);
