@@ -1,5 +1,3 @@
 # Three.js-Globe
 
-Test
-
-Test2
+![globe](https://github.com/jonathanleejono/Three.js-Globe/blob/main/assets/globe_scene.png)
