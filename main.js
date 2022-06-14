@@ -107,9 +107,9 @@ function animate() {
 animate();
 
 addEventListener("mousemove", (event) => {
-  console.log("event: ", event);
+  // console.log("event: ", event);
   mouse.x = (event.clientX / innerWidth) * 2 - 1;
   mouse.y = -(event.clientY / innerHeight) * 2 + 1;
 });
 
-console.log("mouse: ", mouse);
+// console.log("mouse: ", mouse);
