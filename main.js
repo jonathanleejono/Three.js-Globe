@@ -19,10 +19,10 @@ const renderer = new THREE.WebGLRenderer({
   canvas: document.querySelector("canvas"),
 });
 
-console.log(scene);
-console.log(camera);
-console.log(renderer);
-console.log("test");
+// console.log(scene);
+// console.log(camera);
+// console.log(renderer);
+// console.log("test");
 
 renderer.setSize(innerWidth, innerHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
